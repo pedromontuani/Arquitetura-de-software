@@ -1,0 +1,32 @@
+# Memory Leak Analyzer
+
+O **analisador de memoria estático** é uma ferramenta em C# que realiza análise estática de código para identificar alocações de memória em arquivos C#. Utilizando a biblioteca Roslyn, o projeto analisa a árvore de sintaxe do código-fonte e detecta onde novos objetos são alocados, ajudando os desenvolvedores a identificar possíveis vazamentos de memória.
+
+## Funcionalidades
+
+- Lê o código de um arquivo C# especificado.
+- Cria uma árvore de sintaxe a partir do código.
+- Identifica todas as expressões de criação de novos objetos.
+- Informa o número total de alocações de memória e suas localizações.
+
+## Requisitos
+
+- [.NET SDK](https://dotnet.microsoft.com/download) (versão 6.0 ou superior)
+- Pacotes NuGet:
+  - Microsoft.CodeAnalysis
+  - Microsoft.CodeAnalysis.CSharp
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone <url-do-repositório>
+   cd MemoryLeakAnalyzer
+
+2- Restaure os pacotes NuGet:
+> dotnet restore
+
+3- Certifique-se de que os pacotes necessários estão instalados:
+dotnet add package Microsoft.CodeAnalysis
+dotnet add package Microsoft.CodeAnalysis.CSharp
