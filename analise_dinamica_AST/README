@@ -1,0 +1,34 @@
+# Memory Leak Dynamic Analyzer
+
+O **analisador de memoria dinamica** é uma ferramenta em C# que analisa dinamicamente a alocação de memória de outros programas, permitindo que os desenvolvedores monitorem o uso de memória em tempo real. O projeto utiliza a biblioteca Roslyn para executar código C# de forma dinâmica e medir o uso de memória antes e depois da execução.
+
+## Funcionalidades
+
+- Monitora o uso de memória antes e depois da execução de um código específico.
+- Executa código C# contido em arquivos e captura erros de compilação.
+- Força a coleta de lixo para avaliar a eficácia da gestão de memória.
+
+## Requisitos
+
+- [.NET SDK](https://dotnet.microsoft.com/download) (versão 6.0 ou superior)
+- Pacotes NuGet:
+  - Microsoft.CodeAnalysis.CSharp
+  - Microsoft.CodeAnalysis.CSharp.Scripting
+  - Microsoft.CodeAnalysis.Scripting
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone <url-do-repositório>
+   cd analise_dinamica_AST
+
+
+2-Restaure os pacotes NuGet:
+> dotnet restore
+
+3 -Certifique-se de que os pacotes necessários estão instalados:
+> dotnet add package Microsoft.CodeAnalysis.CSharp
+> dotnet add package Microsoft.CodeAnalysis.CSharp.Scripting
+> dotnet add package Microsoft.CodeAnalysis.Scripting
