@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isaac\\Desktop\\UFLA\\Arquitetura de software\\TP2\\metricas\\metricas.csproj": {}
+    "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isaac\\Desktop\\UFLA\\Arquitetura de software\\TP2\\metricas\\metricas.csproj": {
+    "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isaac\\Desktop\\UFLA\\Arquitetura de software\\TP2\\metricas\\metricas.csproj",
+        "projectUniqueName": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj",
         "projectName": "metricas",
-        "projectPath": "C:\\Users\\Isaac\\Desktop\\UFLA\\Arquitetura de software\\TP2\\metricas\\metricas.csproj",
-        "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isaac\\Desktop\\UFLA\\Arquitetura de software\\TP2\\metricas\\obj\\",
+        "projectPath": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj",
+        "packagesPath": "/home/pedro/.nuget/packages/",
+        "outputPath": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/pedro/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/pedro/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

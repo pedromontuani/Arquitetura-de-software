@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = metricas
-build_property.ProjectDir = C:\Users\Isaac\Desktop\UFLA\Arquitetura de software\TP2\metricas\
+build_property.ProjectDir = /home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
