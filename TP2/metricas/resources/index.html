@@ -44,7 +44,7 @@ ${foreach(report in reports)}
 <tr>
 	<td class="file ${report.ratingCssClass}" data-value="constants"><a href="${report.fullReportPath}">${report.filePath}</a></td>
 	<td data-value="${report.percentage}" class="pic ${report.ratingCssClass}">
-	<div class="chart"><div class="cover-fill cover-full" style="width: ${report.percentage}%"></div><div class="cover-empty" style="width: 0%"></div></div>
+	<div class="chart"><div class="cover-fill cover-full" style="width: calc(100% - ${report.percentage}%)"></div><div class="cover-empty" style="width: 0%"></div></div>
 	</td>
 	<td data-value="${report.errorsPercentage}" class="pct ${report.ratingCssClass}">${report.errorsCount}</td>
 	<td data-value="${report.warningsPercentage}" class="pct ${report.ratingCssClass}">${report.warningsCount}</td>
@@ -67,7 +67,7 @@ ${end}
                 </p>
             <p>
                 Cada verificação é associada a um peso específico que reflete sua importância para
-                acessibilidade.
+                acessibilidade, sendo <strong>Erros = 1</strong> e <strong>Alertas = 0,5</strong>.
             </p>
             <p>
                 A pontuação final é reduzida proporcionalmente ao número de penalizações em relação ao total
