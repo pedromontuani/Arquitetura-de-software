@@ -8,12 +8,25 @@
     ".NETCoreApp,Version=v8.0": {
       "metricas/1.0.0": {
         "dependencies": {
+          "AngleSharp": "1.1.2",
           "HtmlAgilityPack": "1.11.67",
+          "JinianNet.JNTemplate": "2.4.2",
           "itext7": "8.0.5",
           "itext7.bouncy-castle-adapter": "8.0.5"
         },
         "runtime": {
           "metricas.dll": {}
+        }
+      },
+      "AngleSharp/1.1.2": {
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/AngleSharp.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
         }
       },
       "BouncyCastle.Cryptography/2.2.1": {
@@ -43,7 +56,7 @@
           "System.Runtime.Loader": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Security.Cryptography.Csp": "4.3.0",
-          "System.Text.Encoding.CodePages": "4.3.0",
+          "System.Text.Encoding.CodePages": "8.0.0",
           "System.Text.RegularExpressions": "4.3.1",
           "System.Threading.Thread": "4.3.0",
           "System.Threading.ThreadPool": "4.3.0",
@@ -129,6 +142,14 @@
       "itext7.bouncy-castle-adapter/8.0.5": {
         "dependencies": {
           "itext.bouncy-castle-adapter": "8.0.5"
+        }
+      },
+      "JinianNet.JNTemplate/2.4.2": {
+        "runtime": {
+          "lib/net8.0/JinianNet.JNTemplate.dll": {
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
+          }
         }
       },
       "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
@@ -669,22 +690,7 @@
           "System.Runtime": "4.3.1"
         }
       },
-      "System.Text.Encoding.CodePages/4.3.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.1",
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.1",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
+      "System.Text.Encoding.CodePages/8.0.0": {},
       "System.Text.Encoding.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.1",
@@ -770,6 +776,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngleSharp/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aRFpAqixbuj1Vmqy2hsWPF0PJygo1SfjvmpBvVWZv6i+/u+C/L4wDdwFIzyCGUbjqr61NsZdPNPqDE8wlmG2qA==",
+      "path": "anglesharp/1.1.2",
+      "hashPath": "anglesharp.1.1.2.nupkg.sha512"
+    },
     "BouncyCastle.Cryptography/2.2.1": {
       "type": "package",
       "serviceable": true,
@@ -818,6 +831,13 @@
       "sha512": "sha512-9jpalaOyxbcuhbl9yJJQGXdseKUFrKlUjjcjIvReb3Qz4Aw0F+WNXKOo0sax87TGGNb66fyHsfJib3JTnfzRYw==",
       "path": "itext7.bouncy-castle-adapter/8.0.5",
       "hashPath": "itext7.bouncy-castle-adapter.8.0.5.nupkg.sha512"
+    },
+    "JinianNet.JNTemplate/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FFwQz3UMCbNwe+0JqscBfMRJ72y+BbKjqQztOCuYHXXpxkukviiUMMfZL8UGKsjf0tzZG2ultFjTNi+9HPvWwg==",
+      "path": "jiniannet.jntemplate/2.4.2",
+      "hashPath": "jiniannet.jntemplate.2.4.2.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
       "type": "package",
@@ -1274,12 +1294,12 @@
       "path": "system.text.encoding/4.3.0",
       "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
     },
-    "System.Text.Encoding.CodePages/4.3.0": {
+    "System.Text.Encoding.CodePages/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IRiEFUa5b/Gs5Egg8oqBVoywhtOeaO2KOx3j0RfcYY/raxqBuEK7NXRDgOwtYM8qbi+7S4RPXUbNt+ZxyY0/NQ==",
-      "path": "system.text.encoding.codepages/4.3.0",
-      "hashPath": "system.text.encoding.codepages.4.3.0.nupkg.sha512"
+      "sha512": "sha512-OZIsVplFGaVY90G2SbpgU7EnCoOO5pw1t4ic21dBF3/1omrJFpAGoNAVpPyMVOC90/hvgkGG3VFqR13YgZMQfg==",
+      "path": "system.text.encoding.codepages/8.0.0",
+      "hashPath": "system.text.encoding.codepages.8.0.0.nupkg.sha512"
     },
     "System.Text.Encoding.Extensions/4.3.0": {
       "type": "package",

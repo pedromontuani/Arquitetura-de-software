@@ -17,5 +17,53 @@ public class FilesManager
     {
         return Directory.GetFiles(path, "*.html", SearchOption.AllDirectories).ToList();
     }
+    
+    public static void DeleteDirectory(string path)
+    {
+        if (Directory.Exists(path))
+        {
+            // var files = GetAllHtmlFilesFromDirectory(path);
+            // foreach (var file in files)
+            // {
+            //     File.Delete(file);
+            // }
+            
+            Directory.Delete(path, true);
+        }
+    }
+
+    public static void SaveFile(string dir, string path, string content)
+    {
+        if (!Directory.Exists(dir))
+        { 
+            Directory.CreateDirectory(dir);
+        }
+        
+        File.WriteAllText(dir + "/" + path, content);
+    }
+    public static void SaveFile(string path, string content)
+    {
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+        
+        File.WriteAllText(path, content);
+    }
+    
+    public static string GetFileName(string path)
+    {
+        return Path.GetFileName(path);
+    }
+    
+    public static string HashFileName(string path)
+    {
+        return Path.GetFileNameWithoutExtension(path) + "_" + Guid.NewGuid() + Path.GetExtension(path);
+    }
+    
+    public static string GetFileContent(string path)
+    {
+        return File.ReadAllText(path);
+    }
 
 }

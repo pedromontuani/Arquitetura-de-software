@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ba2bh8SpSS4=",
+  "dgSpecHash": "ZpP2QGzHrPA=",
   "success": true,
   "projectFilePath": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj",
   "expectedPackageFiles": [
+    "/home/pedro/.nuget/packages/anglesharp/1.1.2/anglesharp.1.1.2.nupkg.sha512",
     "/home/pedro/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/htmlagilitypack/1.11.67/htmlagilitypack.1.11.67.nupkg.sha512",
     "/home/pedro/.nuget/packages/itext/8.0.5/itext.8.0.5.nupkg.sha512",
@@ -11,6 +12,7 @@
     "/home/pedro/.nuget/packages/itext.commons/8.0.5/itext.commons.8.0.5.nupkg.sha512",
     "/home/pedro/.nuget/packages/itext7/8.0.5/itext7.8.0.5.nupkg.sha512",
     "/home/pedro/.nuget/packages/itext7.bouncy-castle-adapter/8.0.5/itext7.bouncy-castle-adapter.8.0.5.nupkg.sha512",
+    "/home/pedro/.nuget/packages/jiniannet.jntemplate/2.4.2/jiniannet.jntemplate.2.4.2.nupkg.sha512",
     "/home/pedro/.nuget/packages/microsoft.dotnet.platformabstractions/1.1.0/microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/microsoft.extensions.dependencyinjection/5.0.0/microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/5.0.0/microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
@@ -76,7 +78,7 @@
     "/home/pedro/.nuget/packages/system.security.cryptography.encoding/4.3.0/system.security.cryptography.encoding.4.3.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.security.cryptography.primitives/4.3.0/system.security.cryptography.primitives.4.3.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
-    "/home/pedro/.nuget/packages/system.text.encoding.codepages/4.3.0/system.text.encoding.codepages.4.3.0.nupkg.sha512",
+    "/home/pedro/.nuget/packages/system.text.encoding.codepages/8.0.0/system.text.encoding.codepages.8.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.text.regularexpressions/4.3.1/system.text.regularexpressions.4.3.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",

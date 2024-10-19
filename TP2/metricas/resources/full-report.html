@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for ${fullFilePath}</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">${fullFilePath}</a> ${fileName}</h1>
+        <div class='clearfix'></div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        
+    </div>
+    <div class='status-line low'></div>
+    <table class="coverage">
+        ${foreach(line in lines)}
+        <tr>
+            <td class="line-count quiet">
+                <a href='#'>${line.number}</a>
+            </td>
+            <td class="line-coverage quiet">
+                ${if(line.isError)}
+                    <span class="cline-any cline-no">&nbsp;</span>
+                ${elif(line.isWarning)}
+                    <span class="cline-any cline-medium">&nbsp;</span>
+                ${else}
+                    <span class="cline-any cline-neutral">&nbsp;</span>
+                ${end}
+            </td>
+            <td class="text">
+                <pre class="prettyprint lang-html">${line.code}</pre>
+            </td>
+        </tr>
+        ${end}
+    </table>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated manually
+            </div>
+        <script src="../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
+    </body>
+</html>
+    

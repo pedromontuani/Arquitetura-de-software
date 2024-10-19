@@ -1,5 +1,6 @@
 using HtmlAgilityPack;
 using metricas.models;
+using metricas.utils;
 
 namespace metricas;
 
@@ -15,11 +16,14 @@ public class A11yAnalyzer
     private List<string> correctHeaders = new();
     private List<string> missingSemanticTags = new();
     
+    private int totalAnalyzed = 0;
+    
     public A11yAnalyzer(string htmlPath)
     {
         this.path = htmlPath;
+        var content = FilesManager.GetFileContent(htmlPath);
         this.document = new HtmlDocument();
-        this.document.Load(htmlPath);
+        this.document.LoadHtml(HtmlString.FormatHtml(content));
     }
     
     public void Analyze()
@@ -30,7 +34,7 @@ public class A11yAnalyzer
     
     public FileReport GetReport()
     {
-        return new FileReport(path, errors);
+        return new FileReport(path, errors, totalAnalyzed);
     }
     
     private void CheckImageAltAttributes()
@@ -42,6 +46,7 @@ public class A11yAnalyzer
             {
                 var altAttribute = img.GetAttributeValue("alt", null);
                 int line = img.Line;
+                totalAnalyzed++;
 
                 if (string.IsNullOrEmpty(altAttribute))
                 {
@@ -65,6 +70,7 @@ public class A11yAnalyzer
         string[] semanticTags = { "header", "nav", "main", "footer", "article", "section" };
         foreach (var tag in semanticTags)
         {
+            totalAnalyzed++;
             var nodes = document.DocumentNode.SelectNodes($"//{tag}");
             if (nodes != null)
             {
@@ -90,6 +96,7 @@ public class A11yAnalyzer
         {
             foreach (var header in headers)
             {
+                totalAnalyzed++;
                 correctHeaders.Add($"Cabeçalho {header.Name} está correto. Pontuação adicionada. (Linha {header.Line})");
             }
         }
