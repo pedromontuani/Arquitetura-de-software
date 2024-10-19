@@ -18,7 +18,7 @@ public class FileReport(string path, List<A11YError> errors, int total)
         int warningsCount = errors.Count(e => e.severity == A11YErrorSeverity.Warning);
         int errorsPercentage = (int) Math.Round((double) errorsCount / totalAnalyzed * 100);
         int warningsPercentage = (int) Math.Round((double) warningsCount / totalAnalyzed * 100);
-        int reportPercentage = (int)((1 - (double)(errorsCount + warningsCount) / totalAnalyzed) * 100);
+        int reportPercentage = (int)((1 - (double)(errorsCount + ((double) warningsCount / 2)) / totalAnalyzed) * 100);
 
         Rating rating = GetRatingByPercentage(reportPercentage);
         

@@ -28,12 +28,13 @@ public class Report(List<FileReport> reports)
         var totalErrorsCount = formattedReports.Sum(f => f.errorsCount);
         var totalWarningsCount = formattedReports.Sum(f => f.warningsCount);
         var totalAnalyzesCount = formattedReports.Sum(f => f.totalAnalyzesCount);
-        var overralErrorsPercentage = (int)((1 - (double)(totalErrorsCount + totalWarningsCount) / totalAnalyzesCount) * 100);
+        var overralErrorsPercentage = (int)((1 - (double)(totalErrorsCount + ((double)totalWarningsCount / 2)) / totalAnalyzesCount) * 100);
         var overralRating = FileReport.GetRatingByPercentage(overralErrorsPercentage);
         var result = HtmlIndexFileReport.GetFormattedClassification(overralRating);
         
         _indexTemplate.Set("reports", formattedReports);
         _indexTemplate.Set("result", result);
+        _indexTemplate.Set("ratingCssClass", HtmlIndexFileReport.GetRatingCssClass(overralRating));
         
         FilesManager.SaveFile(OutDir + "/index.html", _indexTemplate.Render());
     }

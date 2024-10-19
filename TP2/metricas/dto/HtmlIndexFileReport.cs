@@ -46,7 +46,7 @@ public class HtmlIndexFileReport(string filePath, string fullReportPath, int rep
         }
     }
 
-    private static string GetRatingCssClass(Rating rating)
+    public static string GetRatingCssClass(Rating rating)
     {
         switch (rating)
         {
