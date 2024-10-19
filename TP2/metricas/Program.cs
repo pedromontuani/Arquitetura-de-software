@@ -29,7 +29,7 @@ static class Program
         
         var analyzesResult = analysis.Select(a => a.GetReport()).ToList();
         
-        Report report = new(analyzesResult);
+        var report = new Report(analyzesResult);
         
         report.GenerateReport();
 
