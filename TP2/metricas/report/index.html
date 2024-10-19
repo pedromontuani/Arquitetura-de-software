@@ -20,21 +20,6 @@
 <div class='wrapper'>
     <div class='pad1'>
         <h1>All files</h1>
-        <div class='clearfix'>
-            
-				<div class='fl pad1y space-right2'>
-					<span class="strong">teste</span>
-					<span class="quiet">Teste</span>
-					<span class='fraction'>test</span>
-				</div>
-			
-				<div class='fl pad1y space-right2'>
-					<span class="strong">teste</span>
-					<span class="quiet">Teste</span>
-					<span class='fraction'>test</span>
-				</div>
-			
-        </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
@@ -47,67 +32,74 @@
 <tr>
    <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
    <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
-   <th data-col="errors" data-type="number" data-fmt="pct" class="pct">Errors</th>
-   <th data-col="warnings" data-type="number" data-fmt="pct" class="pct">Warnings</th>
-   <th data-col="total" data-type="number" data-fmt="pct" class="pct">Performed analyzes</th>
+   <th data-col="errors" data-type="number" data-fmt="pct" class="pct">Erros</th>
+   <th data-col="warnings" data-type="number" data-fmt="pct" class="pct">Alertas</th>
+   <th data-col="total" data-type="number" data-fmt="pct" class="pct">Análises realizadas</th>
+    <th data-col="total" data-type="number" data-fmt="pct" class="pct">Classificação</th>
 </tr>
 </thead>
 <tbody>
 
 
 <tr>
-	<td class="file high" data-value="constants"><a href="index_5cc98119-9654-4d45-abdf-cffefcdfb955.html">src/index.html</a></td>
-	<td data-value="83" class="pic high">
-	<div class="chart"><div class="cover-fill cover-full" style="width: 83%"></div><div class="cover-empty" style="width: 0%"></div></div>
+	<td class="file low" data-value="constants"><a href="full/somepage_e1f0be58-342b-4950-b9b9-bcee34f36c67.html">src-bad/somepage.html</a></td>
+	<td data-value="0" class="pic low">
+	<div class="chart"><div class="cover-fill cover-full" style="width: 0%"></div><div class="cover-empty" style="width: 0%"></div></div>
 	</td>
-	<td data-value="17" class="pct high">2</td>
-	<td data-value="0" class="pct high">0</td>
-    <td data-value="0" class="pct high">12</td>
+	<td data-value="100" class="pct low">6</td>
+	<td data-value="0" class="pct low">0</td>
+    <td data-value="0" class="pct low">6</td>
+    <td data-value="0" class="pct low">Ruim</td>
 </tr>
 
 <tr>
-	<td class="file high" data-value="constants"><a href="issues_06d9282c-15ce-443c-8446-ddf4d32e6325.html">src/issues.html</a></td>
-	<td data-value="90" class="pic high">
-	<div class="chart"><div class="cover-fill cover-full" style="width: 90%"></div><div class="cover-empty" style="width: 0%"></div></div>
+	<td class="file low" data-value="constants"><a href="full/wrong-inputs_8522d30c-e9f4-4b7f-b1af-425f2ff5d93f.html">src-bad/wrong-inputs.html</a></td>
+	<td data-value="0" class="pic low">
+	<div class="chart"><div class="cover-fill cover-full" style="width: 0%"></div><div class="cover-empty" style="width: 0%"></div></div>
 	</td>
-	<td data-value="9" class="pct high">3</td>
-	<td data-value="0" class="pct high">0</td>
-    <td data-value="0" class="pct high">32</td>
-</tr>
-
-<tr>
-	<td class="file high" data-value="constants"><a href="somepage_27466aba-0935-43e6-b8a3-8c928f3c0c86.html">src/somepage.html</a></td>
-	<td data-value="14" class="pic high">
-	<div class="chart"><div class="cover-fill cover-full" style="width: 14%"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="86" class="pct high">6</td>
-	<td data-value="0" class="pct high">0</td>
-    <td data-value="0" class="pct high">7</td>
-</tr>
-
-<tr>
-	<td class="file high" data-value="constants"><a href="after_u_2f25b27e-ddca-421f-ab2c-450545b1d99c.html">src/after_u.html</a></td>
-	<td data-value="96" class="pic high">
-	<div class="chart"><div class="cover-fill cover-full" style="width: 96%"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="3" class="pct high">1</td>
-	<td data-value="0" class="pct high">0</td>
-    <td data-value="0" class="pct high">31</td>
-</tr>
-
-<tr>
-	<td class="file high" data-value="constants"><a href="before_u_de77ed42-c277-42cd-a998-25b6cd9b0ab7.html">src/before_u.html</a></td>
-	<td data-value="52" class="pic high">
-	<div class="chart"><div class="cover-fill cover-full" style="width: 52%"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="48" class="pct high">10</td>
-	<td data-value="0" class="pct high">0</td>
-    <td data-value="0" class="pct high">21</td>
+	<td data-value="88" class="pct low">7</td>
+	<td data-value="12" class="pct low">1</td>
+    <td data-value="12" class="pct low">8</td>
+    <td data-value="12" class="pct low">Ruim</td>
 </tr>
 
 
 </tbody>
 </table>
+        <div style="padding-left: 20px; padding-top: 20px">
+            <h2>Classificação geral: Ruim</h2>
+        </div>
+        
+        <div style="padding-left: 20px; padding-top: 20px">
+            <h2>Explicação da Lógica de Penalização e Métrica:</h2>
+            <p>
+                A lógica de penalização foi inspirada nas diretrizes WCAG (Web Content Accessibility
+                Guidelines).
+                </p>
+            <p>
+                Cada verificação é associada a um peso específico que reflete sua importância para
+                acessibilidade.
+            </p>
+            <p>
+                A pontuação final é reduzida proporcionalmente ao número de penalizações em relação ao total
+                de verificações realizadas, para refletir melhor a gravidade dos problemas de acessibilidade.
+            </p>
+            <h3>
+                A classificação é baseada na pontuação total, sendo: 
+            </h3>
+            <p>
+                - 0 a 25: Ruim
+            </p>
+            <p>
+                - 26 a 50: Regular
+            </p>
+           <p>
+               - 51 a 75: Bom
+           </p>
+           <p>
+               - 76 a 100: Ótimo
+           </p>
+        </div>
 </div>
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

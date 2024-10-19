@@ -3,7 +3,7 @@ using AngleSharp.Html.Parser;
 
 namespace metricas.utils;
 
-public class HtmlString
+public static class HtmlString
 {
     public static string ReplaceHtmlSymbols(string source)
     {

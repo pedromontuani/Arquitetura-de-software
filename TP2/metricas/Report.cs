@@ -1,5 +1,3 @@
-using AngleSharp.Html;
-using AngleSharp.Html.Parser;
 using JinianNet.JNTemplate;
 using metricas.dto;
 using metricas.models;
@@ -9,49 +7,44 @@ namespace metricas;
 
 public class Report(List<FileReport> reports)
 {
-    private const string indexTemplatePath = "resources/index.html";
-    private const string fullTemplatePath ="resources/full-report.html";
-    private const string outDir = "report";
-    private const string fullReportDir = outDir + "/full";
-    
-    private List<FileReport> reports = reports;
-    private ITemplate indexTemplate = Engine.LoadTemplate(indexTemplatePath);
+    private const string IndexTemplatePath = "resources/index.html";
+    private const string FullTemplatePath ="resources/full-report.html";
+    private const string OutDir = "report";
+    private const string FullReportDir = "full";
+    private const string FormattedFullReportDir = OutDir + "/" + FullReportDir;
+
+    private readonly ITemplate _indexTemplate = Engine.LoadTemplate(IndexTemplatePath);
 
     public void GenerateReport()
     {
-        FilesManager.DeleteDirectory(fullReportDir);
+        FilesManager.DeleteDirectory(FormattedFullReportDir);
         CreateIndexFile();
         Parallel.ForEach(reports, CreateFullReportFile);
-    }
-    
-    private List<HtmlIndexHeaderItem> GetHeaderItems()
-    {
-        List<HtmlIndexHeaderItem> headerItems = new();
-        
-        headerItems.Add(new("teste", "Teste", "test"));
-        headerItems.Add(new("teste", "Teste", "test"));
-        
-        return headerItems;
     }
 
     private void CreateIndexFile()
     {
-        var headerItems = GetHeaderItems();
-        var formattedReports = reports.Select(r => r.ToHtmlIndexFileReport()).ToList();
+        var formattedReports = reports.Select(r => r.ToHtmlIndexFileReport(FullReportDir)).ToList();
+        var totalErrorsCount = formattedReports.Sum(f => f.errorsCount);
+        var totalWarningsCount = formattedReports.Sum(f => f.warningsCount);
+        var totalAnalyzesCount = formattedReports.Sum(f => f.totalAnalyzesCount);
+        var overralErrorsPercentage = (int)((1 - (double)(totalErrorsCount + totalWarningsCount) / totalAnalyzesCount) * 100);
+        var overralRating = FileReport.GetRatingByPercentage(overralErrorsPercentage);
+        var result = HtmlIndexFileReport.GetFormattedClassification(overralRating);
         
-        indexTemplate.Set("headerItems", headerItems);
-        indexTemplate.Set("reports", formattedReports);
+        _indexTemplate.Set("reports", formattedReports);
+        _indexTemplate.Set("result", result);
         
-        FilesManager.SaveFile(outDir + "/index.html", indexTemplate.Render());
+        FilesManager.SaveFile(OutDir + "/index.html", _indexTemplate.Render());
     }
     
     private void CreateFullReportFile(FileReport report)
     {
-        var fullReportTemplate = Engine.LoadTemplate(fullTemplatePath);
+        var fullReportTemplate = Engine.LoadTemplate(FullTemplatePath);
         var fileContent = FilesManager.GetFileContent(report.path);
         var formattedCode = HtmlString.FormatHtml(fileContent);
         var fileName = FilesManager.GetFileName(report.path);
-        var hashedFilename = FilesManager.HashFileName(report.path);
+        var hashedFilename = report.hashedPath;
         var linesInfo = report.GetFullReportLines(formattedCode);
         
         
@@ -61,7 +54,7 @@ public class Report(List<FileReport> reports)
         
         var output = fullReportTemplate.Render();
         
-        FilesManager.SaveFile(fullReportDir, hashedFilename, output);
+        FilesManager.SaveFile(FormattedFullReportDir, hashedFilename, output);
     }
 
    

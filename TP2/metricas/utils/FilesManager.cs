@@ -1,6 +1,6 @@
 namespace metricas.utils;
 
-public class FilesManager
+public static class FilesManager
 {
     
     public static bool IsValidPath(string path)
@@ -22,11 +22,6 @@ public class FilesManager
     {
         if (Directory.Exists(path))
         {
-            // var files = GetAllHtmlFilesFromDirectory(path);
-            // foreach (var file in files)
-            // {
-            //     File.Delete(file);
-            // }
             
             Directory.Delete(path, true);
         }

@@ -1,65 +1,58 @@
+using AngleSharp.Text;
 using HtmlAgilityPack;
 using metricas.models;
 using metricas.utils;
 
 namespace metricas;
 
-public class A11yAnalyzer
+public class A11YAnalyzer
 {
-    private HtmlDocument document;
-    private string path;
+    private readonly HtmlDocument _document;
+    private readonly string _path;
     
     private List<A11YError> errors { get; } = new();
     
-    private List<string> correctImages = new();
-    private List<string> incorrectImages = new();
-    private List<string> correctHeaders = new();
-    private List<string> missingSemanticTags = new();
+    private int _totalAnalyzed = 0;
     
-    private int totalAnalyzed = 0;
-    
-    public A11yAnalyzer(string htmlPath)
+    public A11YAnalyzer(string htmlPath)
     {
-        this.path = htmlPath;
+        this._path = htmlPath;
         var content = FilesManager.GetFileContent(htmlPath);
-        this.document = new HtmlDocument();
-        this.document.LoadHtml(HtmlString.FormatHtml(content));
+        this._document = new HtmlDocument();
+        this._document.LoadHtml(HtmlString.FormatHtml(content));
     }
     
     public void Analyze()
     {
         CheckImageAltAttributes();
         CheckSemanticStructure();
+        IdentifyInputPurpose();
     }
     
     public FileReport GetReport()
     {
-        return new FileReport(path, errors, totalAnalyzed);
+        return new FileReport(_path, errors, _totalAnalyzed);
     }
     
     private void CheckImageAltAttributes()
     {
-        var images = document.DocumentNode.SelectNodes("//img");
+        var images = _document.DocumentNode.SelectNodes("//img");
         if (images != null)
         {
             foreach (var img in images)
             {
                 var altAttribute = img.GetAttributeValue("alt", null);
                 int line = img.Line;
-                totalAnalyzed++;
+                
+                _totalAnalyzed++;
 
                 if (string.IsNullOrEmpty(altAttribute))
                 {
-                    errors.Add(new($"Imagem sem atributo 'alt'", line, A11yErrorType.ImageAlt, A11yErrorSeverity.Error));
+                    errors.Add(new($"Imagem sem atributo 'alt'", line, A11YErrorType.ImageAlt, A11YErrorSeverity.Error));
                 }
                 else if (altAttribute == "")
                 {
-                    errors.Add(new($"Imagem com 'alt' vazio", line, A11yErrorType.ImageAlt, A11yErrorSeverity.Error));
-                    incorrectImages.Add($"Imagem com 'alt' vazio. Penalização aplicada. (Linha {line})");
-                }
-                else
-                {
-                    correctImages.Add($"Imagem com 'alt' adequado: {altAttribute}. Pontuação adicionada. (Linha {line})");
+                    errors.Add(new($"Imagem com 'alt' vazio", line, A11YErrorType.ImageAlt, A11YErrorSeverity.Error));
                 }
             }
         }
@@ -70,35 +63,41 @@ public class A11yAnalyzer
         string[] semanticTags = { "header", "nav", "main", "footer", "article", "section" };
         foreach (var tag in semanticTags)
         {
-            totalAnalyzed++;
-            var nodes = document.DocumentNode.SelectNodes($"//{tag}");
-            if (nodes != null)
+            _totalAnalyzed++;
+            var nodes = _document.DocumentNode.SelectNodes($"//{tag}");
+            if (nodes == null)
             {
-                foreach (var node in nodes)
+                errors.Add(new($"Tag semântica <{tag}> ausente", 1, A11YErrorType.SemanticStructure, A11YErrorSeverity.Error));
+            }
+        }
+    }
+
+    private void IdentifyInputPurpose()
+    {
+        var inputs = _document.DocumentNode.SelectNodes("//input");
+
+        if (inputs != null)
+        {
+            foreach (var input in inputs)
+            {
+                _totalAnalyzed++;
+                
+                var type = input.GetAttributeValue("type", null);
+                var autocomplete = input.GetAttributeValue("autocomplete", null);
+
+                if (string.IsNullOrEmpty(type))
                 {
-                    correctHeaders.Add($"Tag semântica <{tag}> encontrada. Pontuação adicionada. (Linha {node.Line})");
+                    errors.Add(new($"Input com 'type' vazio", input.Line, A11YErrorType.InputProperties, A11YErrorSeverity.Error));
+                }
+
+                if (string.IsNullOrEmpty(autocomplete))
+                {
+                    errors.Add(new($"Input com 'autocomplete' vazio", input.Line, A11YErrorType.InputProperties, A11YErrorSeverity.Warning));
+
                 }
             }
-            else
-            {
-                errors.Add(new($"Tag semântica <{tag}> ausente", 0, A11yErrorType.SemanticStructure, A11yErrorSeverity.Error));
-                missingSemanticTags.Add($"Tag semântica <{tag}> ausente. Penalização aplicada.");
-            }
-        }
-
-        CheckHeaderHierarchy();
-    }
-
-    private void CheckHeaderHierarchy()
-    {
-        var headers = document.DocumentNode.SelectNodes("//h1|//h2|//h3|//h4|//h5|//h6");
-        if (headers != null)
-        {
-            foreach (var header in headers)
-            {
-                totalAnalyzed++;
-                correctHeaders.Add($"Cabeçalho {header.Name} está correto. Pontuação adicionada. (Linha {header.Line})");
-            }
         }
     }
+    
+
 }

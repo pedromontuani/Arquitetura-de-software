@@ -4861,19 +4861,19 @@
     ]
   },
   "packageFolders": {
-    "/home/pedro/.nuget/packages/": {}
+    "/Users/pmontu01/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj",
+      "projectUniqueName": "/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/metricas.csproj",
       "projectName": "metricas",
-      "projectPath": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/metricas.csproj",
-      "packagesPath": "/home/pedro/.nuget/packages/",
-      "outputPath": "/home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/obj/",
+      "projectPath": "/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/metricas.csproj",
+      "packagesPath": "/Users/pmontu01/.nuget/packages/",
+      "outputPath": "/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/pedro/.nuget/NuGet/NuGet.Config"
+        "/Users/pmontu01/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4939,7 +4939,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/pedro/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/pmontu01/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -124,3 +124,46 @@ C:/Users/Isaac/Desktop/UFLA/Arquitetura de software/TP2/metricas/bin/Debug/net8.
 /Volumes/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/ref/metricas.dll
 /home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/JinianNet.JNTemplate.dll
 /home/pedro/UFLA/Arq de Software/Metrics/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/AngleSharp.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/metricas
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/metricas.deps.json
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/metricas.runtimeconfig.json
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/metricas.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/metricas.pdb
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/AngleSharp.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/HtmlAgilityPack.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.barcodes.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.bouncy-castle-connector.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.forms.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.io.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.kernel.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.layout.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.pdfa.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.pdfua.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.sign.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.styledxmlparser.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.svg.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.bouncy-castle-adapter.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/itext.commons.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/JinianNet.JNTemplate.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.csproj.AssemblyReference.cache
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.AssemblyInfoInputs.cache
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.AssemblyInfo.cs
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.csproj.CoreCompileInputs.cache
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.sourcelink.json
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.csproj.Up2Date
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/refint/metricas.dll
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.pdb
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/metricas.genruntimeconfig.cache
+/Users/pmontu01/Documents/Arquitetura/Arquitetura-de-software/TP2/metricas/obj/Debug/net8.0/ref/metricas.dll

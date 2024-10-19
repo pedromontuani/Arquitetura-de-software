@@ -1,8 +1,8 @@
-﻿using HtmlAgilityPack;
-using metricas;
-using metricas.utils;
+﻿using metricas.utils;
 
-class Program
+namespace metricas;
+
+static class Program
 {
     static void Main(string[] args)
     {
@@ -20,24 +20,24 @@ class Program
             return;
         }
         
-        List<A11yAnalyzer> analysis = CreateAnalyzers(path);
+        List<A11YAnalyzer> analysis = CreateAnalyzes(path);
 
         Parallel.ForEach(analysis, a =>
         {
             a.Analyze();
         });
         
-        var reports = analysis.Select(a => a.GetReport()).ToList();
+        var analyzesResult = analysis.Select(a => a.GetReport()).ToList();
         
-        Report report = new(reports);
+        Report report = new(analyzesResult);
         
         report.GenerateReport();
 
     }
 
-    static List<A11yAnalyzer> CreateAnalyzers(string path)
+    static List<A11YAnalyzer> CreateAnalyzes(string path)
     {
-        List<A11yAnalyzer> analysis = new();
+        List<A11YAnalyzer> analysis = new();
 
         if (FilesManager.IsFolder(path))
         {
@@ -56,4 +56,3 @@ class Program
         return analysis;
     }
 }
-

@@ -28,23 +28,47 @@
     </div>
     <div class='status-line low'></div>
     <table class="coverage">
+        <tr>
+            <th class="pct" style="width: 40px"></th>
+            <th class="pct" style="width: 200px">Erros</th>
+            <th class="pct" style="width: 800px">Trecho de código</th>
+        </tr>
         ${foreach(line in lines)}
         <tr>
-            <td class="line-count quiet">
+            <td class="line-count quiet" style="width: 40px">
                 <a href='#'>${line.number}</a>
             </td>
-            <td class="line-coverage quiet">
-                ${if(line.isError)}
-                    <span class="cline-any cline-no">&nbsp;</span>
-                ${elif(line.isWarning)}
-                    <span class="cline-any cline-medium">&nbsp;</span>
-                ${else}
-                    <span class="cline-any cline-neutral">&nbsp;</span>
-                ${end}
+            ${if(line.isError)}
+            <td class="text cline-no" style="width: 200px">
+            ${elif(line.isWarning)}
+            <td class="text cline-medium" style="width: 200px">
+            ${else}
+            <td class="text cline-neutral" style="width: 200px">
+            ${end}
+            
+                <ul>
+                    ${foreach(message in line.messages)}
+                    <li>
+                        ${message}
+                    </li>
+                    <br />
+                    ${end}
+                </ul>
             </td>
-            <td class="text">
+            ${if(line.isError)}
+            <td class="text cline-no" style="width: 800px; vertical-align: middle">
                 <pre class="prettyprint lang-html">${line.code}</pre>
             </td>
+            ${elif(line.isWarning)}
+            <td class="text cline-medium" style="width: 800px; vertical-align: middle">
+                <pre class="prettyprint lang-html">${line.code}</pre>
+            </td>
+            ${else}
+            <td class="text cline-neutral" style="width: 800px; vertical-align: middle">
+                <pre class="prettyprint lang-html">${line.code}</pre>
+            </td>
+            ${end}
+            
         </tr>
         ${end}
     </table>

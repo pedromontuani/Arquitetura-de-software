@@ -8,18 +8,29 @@ namespace metricas.models;
 public class FileReport(string path, List<A11YError> errors, int total)
 {
     public string path { get; set; } = path;
+    public string hashedPath { get; set; } = FilesManager.HashFileName(path);
     public List<A11YError> errors { get; set; } = errors;
     public int totalAnalyzed { get; set; } = total;
     
-    public HtmlIndexFileReport ToHtmlIndexFileReport()
+    public HtmlIndexFileReport ToHtmlIndexFileReport(string outDir)
     {
-        int errorsCount = errors.Count(e => e.severity == A11yErrorSeverity.Error);
-        int warningsCount = errors.Count(e => e.severity == A11yErrorSeverity.Warning);
+        int errorsCount = errors.Count(e => e.severity == A11YErrorSeverity.Error);
+        int warningsCount = errors.Count(e => e.severity == A11YErrorSeverity.Warning);
         int errorsPercentage = (int) Math.Round((double) errorsCount / totalAnalyzed * 100);
         int warningsPercentage = (int) Math.Round((double) warningsCount / totalAnalyzed * 100);
         int reportPercentage = (int)((1 - (double)(errorsCount + warningsCount) / totalAnalyzed) * 100);
+
+        Rating rating = GetRatingByPercentage(reportPercentage);
         
-        return new HtmlIndexFileReport(path, FilesManager.HashFileName(path), reportPercentage, errorsPercentage, errorsCount, warningsPercentage, warningsCount, totalAnalyzed);
+        return new HtmlIndexFileReport(path,
+            outDir + "/" + hashedPath,
+            reportPercentage,
+            errorsPercentage,
+            errorsCount,
+            warningsPercentage,
+            warningsCount,
+            totalAnalyzed,
+            rating);
     }
     
     private Dictionary<int, HtmlFullReportLine> GetErrorsDictionary(string[] lines)
@@ -30,21 +41,19 @@ public class FileReport(string path, List<A11YError> errors, int total)
         {
             if (!dict.ContainsKey(error.line))
             {
-                if (error.line == 38)
-                {
-                    Console.Write("");
-                }
                 var report = new HtmlFullReportLine(error.line,
-                        error.severity == A11yErrorSeverity.Error,
-                        error.severity == A11yErrorSeverity.Warning,
+                        error.severity == A11YErrorSeverity.Error,
+                        error.severity == A11YErrorSeverity.Warning,
                         new List<string>{
                             error.title
-                        }, lines[error.line]);
+                        }, lines[error.line - 1]);
                 
                 dict.Add(error.line,report);
             }
-            
-            dict[error.line].messages.Add(error.title);
+            else
+            {
+                dict[error.line].messages.Add(error.title);
+            }
         }
         
         return dict;
@@ -65,5 +74,22 @@ public class FileReport(string path, List<A11YError> errors, int total)
         }
 
         return dict.OrderBy(pair => pair.Key).Select(pair => pair.Value).ToList();
+    }
+    
+    public static Rating GetRatingByPercentage(int percentage)
+    {
+        if (percentage < 26)
+        {
+            return Rating.Bad;
+        } else if (percentage < 51)
+        {
+            return Rating.Medium;
+        } else if (percentage < 76)
+        {
+            return Rating.Good;
+        } else
+        {
+            return Rating.Great;
+        }
     }
 }
