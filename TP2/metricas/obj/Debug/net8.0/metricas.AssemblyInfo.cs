@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("metricas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3986ed5b25cb9918fb4b2516f171d91e910aedf3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7469c1ec9aa3249e2619bab5b31cd461282b6fc0")]
 [assembly: System.Reflection.AssemblyProductAttribute("metricas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("metricas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
